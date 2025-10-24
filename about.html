@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Lina Bouakaz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+        <span>Lina Bouakaz</span>
+      </div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="projects.html">Projects</a></div>
+        
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+       
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-container" data-aos="fade-up" data-aos-duration="1000">
+      <div class="about-img">
+        <img src="pic.png" alt="Lina Bouakaz">
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi, I’m <strong>Lina Bouakaz</strong>, a passionate Computer Science student and 
+          web developer who loves building clean, modern, and responsive websites.
+          <br><br>
+          My goal is to create digital experiences that not only look great 
+          but also solve real problems. I’m constantly learning new technologies 
+          and improving my skills to grow as a developer and freelancer.
+          <br><br>
+          I’m currently working on various web projects using HTML, CSS, JavaScript, 
+          and frameworks like Bootstrap. I also have a strong interest in Python 
+          and database management.
+        </p>
+        <a href="projects.html"><button>See My Projects</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Lina Bouakaz | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0px)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects - Lina Bouakaz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    }
+
+  /* Navbar */
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span{
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
+}
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+/* Navbar Links */
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn:hover{
+    background-color: rgb(109,67, 0);
+}
+
+.nav-container .contact-btn:hover a{
+    color: white;
+}
+
+.nav-container .links a:hover{
+    color: rgb(109,67, 0);
+}
+
+
+
+/* Dropdown */
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+
+
+
+    .projects-section {
+      width: 100%;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 0;
+    }
+
+    .projects-section h2 {
+      font-size: 2.5rem;
+      color: rgb(109,67,0);
+      margin-bottom: 40px;
+    }
+
+    .projects-container {
+      width: 85%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(109,67,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(109,67,0,0.3);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+      color: #333;
+    }
+
+    .project-content h3 {
+      color: rgb(109,67,0);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .project-content a {
+      display: inline-block;
+      background-color: rgb(109,67,0);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .project-content a:hover {
+      background-color: transparent;
+      color: rgb(109,67,0);
+      border: 2px solid rgb(109,67,0);
+      box-shadow: 0 0 15px rgb(109,67,0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: rgba(109,67,0,0.1);
+      color: #333;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Lina Bouakaz</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="projects.html">Projects</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+  <section class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+
+      <div class="project-card">
+        <img src="banner2.jpg" alt="E-Commerce Website">
+        <div class="project-content">
+          <h3>E-Commerce Website</h3>
+          <p>A modern online shopping platform built with HTML, CSS, JS, and PHP for smooth product browsing and checkout.</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="project2.jpg" alt="Portfolio Website">
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>A clean, minimal portfolio design showcasing personal projects and skills using responsive design techniques.</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="project3.jpg" alt="Student Stories Page">
+        <div class="project-content">
+          <h3>Mental Health Platform</h3>
+          <p>An interactive web page for students to share their success stories, connected to a MySQL database via PHP.</p>
+          <a href="#">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="speed.jpg" alt="Fast Typing Keyboard">
+        <div class="project-content">
+          <h3>Fast Typing Keyboard</h3>
+          <p>A fun typing speed test web app built with HTML, CSS, and JavaScript that helps users improve typing speed and accuracy.</p>
+          <a href="https://linabouakaz.github.io/Typing-Speed-Game/">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Lina Bouakaz | All Rights Reserved
+  </footer>
+</body>
+</html>
+

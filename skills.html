@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Skills - Lina Bouakaz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    }
+/* Navbar */
+nav{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+
+.nav-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo{
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span{
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
+}
+
+.hamburg, .cancel{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+/* Navbar Links */
+.nav-container .links {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .contact-btn{
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(109,67, 0);
+    transition: 0.2s linear;
+}
+
+.nav-container .contact-btn:hover{
+    background-color: rgb(109,67, 0);
+}
+
+.nav-container .contact-btn:hover a{
+    color: white;
+}
+
+.nav-container .links a:hover{
+    color: rgb(109,67, 0);
+}
+
+
+
+/* Dropdown */
+.dropdown{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    backdrop-filter: brightness(40%) blur(3px);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}   
+
+
+
+
+    .skills-section {
+      width: 100%;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 0;
+    }
+
+    .skills-section h2 {
+      font-size: 2.5rem;
+      color: rgb(109,67,0);
+      margin-bottom: 40px;
+    }
+
+    .skills-container {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-box {
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(109,67,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(109,67,0,0.3);
+    }
+
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .skill-header i {
+      font-size: 1.5rem;
+      color: rgb(109,67,0);
+    }
+
+    .skill-header h3 {
+      color: rgb(109,67,0);
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .progress-bar {
+      background-color: rgba(109,67,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 15px;
+      margin-bottom: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      border-radius: 10px;
+      background-color: rgb(109,67,0);
+      width: 0;
+      transition: width 2s ease;
+    }
+
+    .percentage {
+      text-align: right;
+      font-weight: 600;
+      color: rgb(109,67,0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: rgba(109,67,0,0.1);
+      color: #333;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Lina Bouakaz</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="projects.html">Projects</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+  <section class="skills-section">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+
+      <div class="skill-box">
+        <div class="skill-header">
+          <i class="fa-brands fa-html5"></i><h3>HTML</h3>
+        </div>
+        <div class="progress-bar"><div class="progress" data-progress="95%"></div></div>
+        <div class="percentage">95%</div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-header">
+          <i class="fa-brands fa-css3-alt"></i><h3>CSS</h3>
+        </div>
+        <div class="progress-bar"><div class="progress" data-progress="90%"></div></div>
+        <div class="percentage">90%</div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-header">
+          <i class="fa-brands fa-js"></i><h3>JavaScript</h3>
+        </div>
+        <div class="progress-bar"><div class="progress" data-progress="80%"></div></div>
+        <div class="percentage">70%</div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-header">
+          <i class="fa-brands fa-bootstrap"></i><h3>Bootstrap</h3>
+        </div>
+        <div class="progress-bar"><div class="progress" data-progress="65%"></div></div>
+        <div class="percentage">75%</div>
+      </div>
+
+      
+
+      <div class="skill-box">
+        <div class="skill-header">
+          <i class="fa-brands fa-php"></i><h3>PHP</h3>
+        </div>
+        <div class="progress-bar"><div class="progress" data-progress="50%"></div></div>
+        <div class="percentage">50%</div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Lina Bouakaz | All Rights Reserved
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".progress").forEach(bar => {
+        const value = bar.getAttribute("data-progress");
+        bar.style.width = value;
+      });
+    });
+  </script>
+</body>
+</html>
+
+
